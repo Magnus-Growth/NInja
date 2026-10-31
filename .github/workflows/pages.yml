@@ -62,12 +62,23 @@ jobs:
               assert block not in html,block
           assert html.count('class="proof-card"') == 8
           assert 'https://t.me/lotmanager' in html
+          assert html.count('data-clarity-mask="true"') == 2
+          for ident in ('trackingConsent','trackingAccept','trackingDecline','trackingSettings'):
+              assert ident in p.ids,ident
+          assert 'src="assets/analytics.js"' in html
+          analytics=Path("dist/assets/analytics.js").read_text(encoding="utf-8")
+          for marker in ('G-00J1364DR1','z6gz4nvssg','job_form_start','competition_form_start','job_telegram_draft_click','competition_telegram_draft_click','scroll_','proof_image_open','analytics_storage','consentv2'):
+              assert marker in analytics,marker
+          assert 'dataLayer.push(arguments)' in analytics
+          assert not any(x in analytics for x in ('formData.fullName','formData.phone','formData.telegram','encodeURIComponent(msg)'))
+
           script = re.search(r'<script>(.*?)</script>',html,re.S)
           assert script, 'Missing inline JavaScript'
           Path('/tmp/ninja-inline.js').write_text(script.group(1),encoding='utf-8')
           print('HTML form and gallery checks passed')
           PY
           node --check /tmp/ninja-inline.js
+          node --check dist/assets/analytics.js
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
