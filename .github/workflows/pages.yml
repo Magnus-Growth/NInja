@@ -62,7 +62,7 @@ jobs:
               assert block not in html,block
           assert html.count('class="proof-card"') == 8
           assert 'https://t.me/lotmanager' in html
-          script = re.search(r'<script>([\\s\\S]*?)</script>',html)
+          script = re.search(r'<script>(.*?)</script>',html,re.S)
           assert script, 'Missing inline JavaScript'
           Path('/tmp/ninja-inline.js').write_text(script.group(1),encoding='utf-8')
           print('HTML form and gallery checks passed')
