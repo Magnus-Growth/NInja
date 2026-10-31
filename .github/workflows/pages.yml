@@ -63,30 +63,27 @@ jobs:
           assert html.count('class="proof-card"') == 8
           assert 'https://t.me/lotmanager' in html
           assert html.count('data-clarity-mask="true"') == 2
-          for ident in ('trackingConsent','trackingAccept','trackingDecline','trackingSettings'):
-              assert ident in p.ids,ident
           assert 'src="assets/analytics.js"' in html
+          assert 'https://www.googletagmanager.com/gtag/js?id=G-00J1364DR1' in html
+          assert "gtag('config', 'G-00J1364DR1'" in html
+          assert '"clarity","script","z6gz4nvssg"' in html
+          assert all(x not in html for x in ('trackingConsent','trackingAccept','trackingDecline','trackingSettings','google-tag-consent-default'))
           analytics=Path("dist/assets/analytics.js").read_text(encoding="utf-8")
-          for marker in ('G-00J1364DR1','z6gz4nvssg',"'_form_start'","'_telegram_draft_click'","'scroll_'",'proof_image_open','analytics_storage','consentv2'):
+          for marker in ("'_form_start'","'_telegram_draft_click'","'scroll_'",'proof_image_open','window.gtag','window.clarity'):
               assert marker in analytics,marker
-          assert 'dataLayer.push(arguments)' in analytics
-          assert not any(x in analytics for x in ('formData.fullName','formData.phone','formData.telegram','encodeURIComponent(msg)'))
-
-          # Basic Consent Mode: a denied default is set high in the head,
-          # while the external analytics library is loaded only after opt-in.
-          assert html.index('id="google-tag-consent-default"') < html.index('</head>')
-          assert 'analytics_storage: \'denied\'' in html
-          assert "window.gtag('consent', 'update'" in analytics
-          assert 'googletagmanager.com/gtag/js?id=' not in html
+          assert all(x not in analytics for x in ('trackingConsent','PREF_KEY','consentv2','localStorage','window.dataLayer','formData.fullName','formData.phone','formData.telegram','encodeURIComponent(msg)'))
+          # The GA and Clarity bootstrap plus the application's own inline JS
+          # must all parse correctly.
           scripts = re.findall(r'<script[^>]*>(.*?)</script>',html,re.S)
           scripts = [s for s in scripts if s.strip()]
-          assert len(scripts) == 2, ('Expected bootstrap and app inline JS',len(scripts))
+          assert len(scripts) == 3, ('Expected GA, Clarity, application inline scripts',len(scripts))
           for i,script in enumerate(scripts):
               Path(f'/tmp/ninja-inline-{i}.js').write_text(script,encoding='utf-8')
-          print('Two forms, eight images, privacy consent and scripts verified')
+          print('Tag install, events, two forms, eight images and JS validated')
           PY
           node --check /tmp/ninja-inline-0.js
           node --check /tmp/ninja-inline-1.js
+          node --check /tmp/ninja-inline-2.js
           node --check dist/assets/analytics.js
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
