@@ -36,3 +36,10 @@ The Actions workflow on pushes to `main` publishes only `index.html`. Other repo
 - Any competition assistance or handling of accounts must comply with NinjaTrader event rules. No promise of winnings or guaranteed salary is made.
 - The job ad uses an independent team identity and disclaims affiliation with NinjaTrader.
 
+
+## Two participation paths (2026-11-01)
+- A fixed bottom navigation lets visitors choose **Job / Operator Role** (application form) or **Compete using own account** (information and enquiry flow).
+- The participant section outlines a proposed **50% participant / 50% team** reward-sharing arrangement, conditional on a prize actually being awarded and received, competition rules, and an advance written agreement.
+- Group access is **not automatic**; `@lotmanager` opens a Telegram prefilled enquiry message. Supply an actual verified private group invite URL before enabling direct joining.
+- Arena terms restrict one entry per person. Signal following or coordinated trading must not be represented as permitted unless the applicable official competition rules confirm it. Users keep full control of their accounts, and no credentials are collected.
+- The user-visible site is not affiliated with NinjaTrader.
