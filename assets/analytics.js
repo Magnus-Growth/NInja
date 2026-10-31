@@ -36,14 +36,15 @@
   function start() {
     if (started) { enabled = true; return; }
     started = true; enabled = true;
-    // No third-party analytics scripts are fetched before opt-in.
+    // Consent is initialized to denied in <head> before this file executes.
+    // Basic Consent Mode: Google and Clarity scripts are loaded only after opt-in.
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('consent', 'default', {
+    window.gtag('consent', 'update', {
       analytics_storage: 'granted', ad_storage: 'denied',
       ad_user_data: 'denied', ad_personalization: 'denied'
     });
+    window.gtag('js', new Date());
     window.gtag('config', GA_ID, {
       allow_google_signals: false, allow_ad_personalization_signals: false
     });
