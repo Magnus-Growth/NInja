@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="স্বাধীন টিমের জন্য NinjaTrader Arena competition-day remote trading operations support role. কোনো বিনিয়োগ লাগবে না; পুরস্কারভিত্তিক ইনসেনটিভ।" />
-<title>Remote Trading Competition Operator | Independent Opportunity</title>
+<meta name="description" content="স্বাধীন ট্রেডিং টিমে কম্পিটিশন-ডে জব অথবা নিজের NinjaTrader Arena অ্যাকাউন্টে অংশগ্রহণের সুযোগ। পুরস্কার পেলে প্রস্তাবিত ৫০% অংশগ্রহণকারী ও ৫০% টিম কমিশন, শুধুমাত্র প্রযোজ্য নিয়ম ও লিখিত চুক্তি সাপেক্ষে।" />
+<title>Trading Competition: Operator Job & Own Account Participation | Independent Team</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -64,12 +64,40 @@ nav{height:78px;display:flex;align-items:center;position:sticky;top:0;z-index:50
 
 .hero-proof-notice{display:flex;align-items:center;gap:13px;margin:17px 0 5px;padding:13px 16px;border:1px solid rgba(240,139,79,.65);background:linear-gradient(110deg,rgba(240,139,79,.15),rgba(39,54,67,.25));border-radius:11px;color:#f7e7dd;text-decoration:none;max-width:590px;transition:border .2s,background .2s}.hero-proof-notice:hover{border-color:#ffb488;background:rgba(240,139,79,.23)}.hero-proof-icon{font-size:27px;color:#ffae7a}.hero-proof-notice strong{display:block;font-size:13px;line-height:1.6}.hero-proof-notice small{display:block;font-size:11px;color:#bed0db}.hero-proof-action{margin-left:auto;font-size:11px;font-weight:700;white-space:nowrap;color:#ffb78e}@media(max-width:520px){.hero-proof-notice{gap:9px;padding:10px}.hero-proof-action{font-size:10px}.hero-proof-icon{font-size:20px}}
 #wins-gallery-status{margin:0 0 14px;color:#c6d5de;font-size:12px}.wins-section{scroll-margin-top:85px}
+
+/* Two-path opportunity experience */
+body{padding-bottom:calc(79px + env(safe-area-inset-bottom))}
+#apply,#join-competition{scroll-margin-top:100px}
+.path-bottom{position:fixed;bottom:0;left:0;right:0;z-index:90;background:rgba(7,13,21,.97);border-top:1px solid rgba(244,152,98,.32);padding:8px 12px calc(8px + env(safe-area-inset-bottom));backdrop-filter:blur(18px);box-shadow:0 -12px 32px rgba(0,0,0,.4)}
+.path-bottom-inner{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:800px;margin:0 auto}
+.path-bottom-link{min-height:54px;border:1px solid #394453;border-radius:10px;background:#141f2c;color:#c6d6e3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-align:center;padding:7px 8px;transition:background .2s,border .2s,color .2s}
+.path-bottom-link:hover,.path-bottom-link.is-active{background:linear-gradient(125deg,#fa743d,#f38a4c);color:#091018;border-color:#ff9f64}
+.path-bottom-link .path-mini{font:800 9px 'DM Sans',sans-serif;letter-spacing:.14em;opacity:.7}
+.path-bottom-link strong{font-size:13px;line-height:1.5;font-weight:700}
+.compete-section{background:radial-gradient(ellipse at 90% 4%,rgba(245,109,54,.16),transparent 46%),linear-gradient(135deg,#101c2a 0%,#080f19 100%);border-top:1px solid #314150;border-bottom:1px solid #314150}
+.compete-intro{text-align:center;max-width:760px;margin:0 auto 35px}.compete-intro .section-desc{max-width:740px;margin:0 auto}.compete-accent{color:var(--accent2)}
+.compete-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+.compete-feature,.compete-steps{border:1px solid #344354;border-radius:18px;padding:30px;background:rgba(16,28,41,.86);box-shadow:0 18px 50px rgba(0,0,0,.14)}
+.compete-mini{font:800 10px 'DM Sans',sans-serif;letter-spacing:.13em;color:#ffad7a}
+.compete-feature h3,.compete-steps h3{margin:9px 0 23px;font-size:22px}
+.compete-split{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:14px;min-height:180px}
+.compete-split>div{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;text-align:center;padding:18px}
+.split-person{background:linear-gradient(155deg,#1ac49c,#15856f);color:#04221d}.split-team{background:linear-gradient(155deg,#f48b52,#d75b31);color:#270f05}
+.compete-split strong{font:800 clamp(42px,6vw,68px)/1 'DM Sans',sans-serif}.compete-split span{font-weight:800;font-size:15px}.compete-split small{font:700 9px 'DM Sans',sans-serif;letter-spacing:.13em;opacity:.72}
+.compete-calc{font-size:13px;line-height:1.8;color:#c4d0db;margin:24px 0 18px}.compete-calc strong{color:#fff}
+.compete-badges{display:flex;flex-wrap:wrap;gap:7px}.compete-badges span{background:#1d303e;border:1px solid #405165;border-radius:40px;padding:6px 11px;font-size:11px;color:#cde2e5}
+.compete-step{display:flex;gap:15px;margin:20px 0}.compete-step>b{min-width:36px;height:36px;display:grid;place-items:center;background:#1f3543;color:#ffb388;border-radius:10px;font:800 12px 'DM Sans',sans-serif}
+.compete-step strong{font-size:15px;color:#fff}.compete-step p{margin:6px 0 0;font-size:13px;line-height:1.75;color:#aebfce}
+.compete-action{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:#101014;padding:14px 16px;border-radius:11px;font-weight:800;margin-top:25px;text-align:center}.compete-action:hover{background:#ff945e}.compete-small{font-size:12px;line-height:1.7;color:#aab9c5}
+.compete-notice{margin-top:24px;background:#241d1c;border:1px solid #684335;border-radius:13px;padding:18px 22px;color:#e2c7b6;font-size:13px;line-height:1.85}.compete-notice strong{color:#ffd1b0}.compete-notice a{color:#ffc093;text-decoration:underline}
+@media(max-width:850px){.compete-layout{grid-template-columns:1fr}.compete-intro{text-align:left}.compete-intro .section-desc{margin:0}}
+@media(max-width:600px){body{padding-bottom:calc(85px + env(safe-area-inset-bottom))}.path-bottom{padding:7px 9px calc(7px + env(safe-area-inset-bottom))}.path-bottom-inner{gap:7px}.path-bottom-link{min-height:62px}.path-bottom-link strong{font-size:12px}.path-bottom-link .path-mini{font-size:8px}.compete-feature,.compete-steps{padding:22px 18px}.compete-split{min-height:165px}.compete-notice{padding:15px}}
 </style>
 </head>
 <body>
 <nav><div class="nav-inner">
  <a class="identity" href="#top" aria-label="Top of page"><span class="mark" aria-hidden="true">NT</span><span><span class="brand-top">NINJATRADER<span style="color:var(--accent)">®</span></span><span class="brand-small">ARENA · INDEPENDENT OPPORTUNITY</span></span></a>
- <div class="nav-links"><a href="#responsibilities">কাজ কী?</a><a href="#incentives">ইনসেনটিভ</a><a href="#competition-wins">উইন প্রুফ</a><a href="#requirements">যোগ্যতা</a><a href="#faq">FAQ</a></div>
+ <div class="nav-links"><a href="#responsibilities">কাজ কী?</a><a href="#incentives">ইনসেনটিভ</a><a href="#competition-wins">উইন প্রুফ</a><a href="#requirements">যোগ্যতা</a><a href="#join-competition">নিজে অংশ নিন</a><a href="#faq">FAQ</a></div>
  <a href="#apply" class="nav-btn">আবেদন করুন ↗</a>
 </div></nav>
 <main id="top">
@@ -138,9 +166,49 @@ nav{height:78px;display:flex;align-items:center;position:sticky;top:0;z-index:50
  <div class="secondary-tools"><button id="copyButton" class="copy-button" type="button">আবেদনের তথ্য কপি করুন</button><a class="copy-button" href="https://t.me/lotmanager" target="_blank" rel="noopener noreferrer">@lotmanager-এ যোগাযোগ করুন ↗</a><span id="formStatus" class="status" role="status" aria-live="polite"></span></div>
  <p class="disclaimer" id="modeHelp">ফর্ম সাবমিট করলে @lotmanager-এর Telegram চ্যাটে আবেদনটি খসড়া বার্তা হিসেবে খুলবে। আবেদনকারীকে অবশ্যই Telegram-এ Send চাপতে হবে। কোনো ডিভাইসে খসড়া দেখা না গেলে কপি বাটন দিয়ে একই চ্যাটে পেস্ট করতে পারবেন। স্বয়ংক্রিয় আবেদন জমার জন্য পৃথক নিরাপদ Bot সংযোগ প্রয়োজন।</p>
  </form></div></div></section>
+
+<section class="section compete-section" id="join-competition" aria-labelledby="compete-title">
+  <div class="wrap">
+    <div class="compete-intro">
+      <span class="eyebrow">SECOND OPPORTUNITY · COMPETE WITH YOUR OWN ACCOUNT</span>
+      <h2 class="section-title" id="compete-title">চাকরি নয়—<span class="compete-accent">নিজের অ্যাকাউন্টে</span><br>কম্পিটিশনে অংশ নিতে চান?</h2>
+      <p class="section-desc">আপনি চাইলে আমাদের স্বাধীন ট্রেডিং কমিউনিটির সঙ্গে যোগাযোগ করতে পারেন। প্রতিযোগিতার যোগ্যতা ও নিয়ম মেনে নিজের নাম, নিজের পরিচয় ও নিজের অ্যাকাউন্টে অংশ নেবেন। টিমের ট্রেড আইডিয়া ও সিগন্যাল পাওয়ার ব্যবস্থা থাকলেও সেগুলো ব্যবহার করা যাবে <strong>শুধু আয়োজকের নিয়মে অনুমোদিত হলে</strong>।</p>
+    </div>
+    <div class="compete-layout">
+      <div class="compete-feature">
+        <span class="compete-mini">HOW THE REWARD SHARING WORKS</span>
+        <h3>জিতলে পুরস্কারের ভাগাভাগি</h3>
+        <div class="compete-split" role="img" aria-label="পুরস্কার ভাগাভাগি: অংশগ্রহণকারী ৫০ শতাংশ, টিম ৫০ শতাংশ কমিশন">
+          <div class="split-person"><strong>50%</strong><span>আপনি পাবেন</span><small>PARTICIPANT</small></div>
+          <div class="split-team"><strong>50%</strong><span>টিম কমিশন</span><small>TEAM SHARE</small></div>
+        </div>
+        <p class="compete-calc">উদাহরণ: প্রতিযোগিতার পুরস্কার হিসেবে প্রকৃতপক্ষে <strong>$100</strong> পাওয়া গেলে প্রস্তাবিত ভাগ—<strong>$50 আপনার</strong>, <strong>$50 টিমের</strong>। এটি আয়োজকের কোনো অফিসিয়াল কমিশন স্কিম নয়; স্বতন্ত্র পক্ষগুলোর মধ্যে আগাম লিখিত চুক্তির প্রস্তাব।</p>
+        <div class="compete-badges"><span>নিজের অ্যাকাউন্ট</span><span>নিজের পরিচয়</span><span>জয়ের নিশ্চয়তা নেই</span></div>
+      </div>
+      <div class="compete-steps">
+        <h3>কীভাবে শুরু করবেন?</h3>
+        <div class="compete-step"><b>01</b><div><strong>নিজে রেজিস্ট্রেশন করুন</strong><p>যে প্রতিযোগিতায় অংশ নেবেন, তার বয়স, দেশ, পরিচয় ও এক-এন্ট্রি-প্রতি-ব্যক্তি নীতি আগে যাচাই করুন। অ্যাকাউন্টের পূর্ণ নিয়ন্ত্রণ আপনারই থাকবে।</p></div></div>
+        <div class="compete-step"><b>02</b><div><strong>Telegram-এ যোগাযোগ করুন</strong><p>আমাদের সঙ্গে যোগাযোগ করে অনুমোদিত কমিউনিটি, ট্রেড আইডিয়া/সিগন্যাল, যোগ্যতা এবং কমিশনের লিখিত শর্ত জেনে নিন। গ্রুপে যুক্ত করার বিষয়টি টিম নিশ্চিত করবে।</p></div></div>
+        <div class="compete-step"><b>03</b><div><strong>নিজে সিদ্ধান্ত নিয়ে অংশ নিন</strong><p>কোনো ট্রেড আইডিয়া ব্যবহার প্ল্যাটফর্মের নিয়মে বৈধ হলে তবেই অনুসরণ করুন। জয়ের পর প্রকৃত পুরস্কার প্রাপ্তি ও লিখিত সম্মতি অনুযায়ী ৫০%–৫০% ভাগ প্রযোজ্য হতে পারে।</p></div></div>
+        <a id="competeJoinLink" class="compete-action" href="https://t.me/lotmanager?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%E0%A5%A4%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%86%E0%A6%AE%E0%A6%BE%E0%A6%B0%20%E0%A6%A8%E0%A6%BF%E0%A6%9C%E0%A7%87%E0%A6%B0%20NinjaTrader%20Arena%20%E0%A6%85%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A6%BE%E0%A6%89%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A7%87%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A7%9F%20%E0%A6%85%E0%A6%82%E0%A6%B6%20%E0%A6%A8%E0%A6%BF%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4%20%E0%A6%86%E0%A6%AA%E0%A6%A8%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B0%20%E0%A6%9F%E0%A7%8D%E0%A6%B0%E0%A7%87%E0%A6%A1%20%E0%A6%86%E0%A6%87%E0%A6%A1%E0%A6%BF%E0%A7%9F%E0%A6%BE%2F%E0%A6%B8%E0%A6%BF%E0%A6%97%E0%A6%A8%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B2%20%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A7%81%E0%A6%AA%E0%A7%87%20%E0%A6%AF%E0%A7%8B%E0%A6%97%20%E0%A6%A6%E0%A7%87%E0%A6%93%E0%A7%9F%E0%A6%BE%E0%A6%B0%20%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%AE%2C%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0%20%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF%E0%A6%A4%E0%A6%BE%20%E0%A6%8F%E0%A6%AC%E0%A6%82%20%E0%A6%9C%E0%A6%BF%E0%A6%A4%E0%A6%B2%E0%A7%87%20%E0%A7%AB%E0%A7%A6%25%20%E0%A6%85%E0%A6%82%E0%A6%B6%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%B9%E0%A6%A3%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%80%20%2F%20%E0%A7%AB%E0%A7%A6%25%20%E0%A6%9F%E0%A6%BF%E0%A6%AE%20%E0%A6%95%E0%A6%AE%E0%A6%BF%E0%A6%B6%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%B2%E0%A6%BF%E0%A6%96%E0%A6%BF%E0%A6%A4%20%E0%A6%B6%E0%A6%B0%E0%A7%8D%E0%A6%A4%20%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%A8%E0%A6%BF%E0%A6%9C%E0%A7%87%E0%A6%B0%20%E0%A6%85%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A6%BE%E0%A6%89%E0%A6%A8%E0%A7%8D%E0%A6%9F%20%E0%A6%93%20%E0%A6%B8%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%A7%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%87%E0%A6%B0%20%E0%A6%A6%E0%A6%BE%E0%A7%9F%E0%A6%BF%E0%A6%A4%E0%A7%8D%E0%A6%AC%20%E0%A6%A8%E0%A6%BF%E0%A6%9C%E0%A7%87%20%E0%A6%A8%E0%A7%87%E0%A6%AC%E0%A5%A4" target="_blank" rel="noopener noreferrer">Telegram-এ যোগদানের অনুরোধ পাঠান <span aria-hidden="true">↗</span></a>
+        <p class="compete-small">এটি সরাসরি <strong>@lotmanager</strong>-এর চ্যাটে একটি প্রস্তুত বার্তা খুলবে। আপনাকে নিজে Send চাপতে হবে। Telegram গ্রুপের সরাসরি আমন্ত্রণ লিংক এখনো দেওয়া হয়নি।</p>
+      </div>
+    </div>
+    <div class="compete-notice"><strong>অবশ্যই পড়ুন:</strong> NinjaTrader Arena-তে একই ব্যক্তির একাধিক এন্ট্রি নিষিদ্ধ। দলবদ্ধ/সমন্বিত ট্রেডিং বা অন্যের সিগন্যাল ব্যবহার আপনার নির্দিষ্ট প্রতিযোগিতার নিয়মে অনুমোদিত কি না আমরা নিশ্চিত করতে পারিনি—নিয়ম অনুমতি না দিলে সেভাবে অংশ নেবেন না। টিম আপনার পাসওয়ার্ড, OTP, অ্যাকাউন্টের নিয়ন্ত্রণ বা অগ্রিম অর্থ চাইবে না। দেশভেদে যোগ্যতা ও প্রযোজ্য আইন আলাদা হতে পারে। <a href="https://arena.ninjatrader.com/downloads/arena-terms-conditions.pdf" target="_blank" rel="noopener noreferrer">অফিসিয়াল Arena নিয়ম পড়ুন ↗</a></div>
+  </div>
+</section>
+
 <section class="section faq" id="faq"><div class="wrap"><div style="text-align:center"><span class="eyebrow">COMMON QUESTIONS</span><h2 class="section-title">কিছু সাধারণ প্রশ্ন</h2></div><div class="faq-list"><details><summary>প্রতিদিন কাজ করতে হবে?</summary><p>না। এই সুযোগটি শুধুমাত্র আগে থেকে নির্ধারিত প্রতিযোগিতার দিনের জন্য। যেদিন প্রতিযোগিতা থাকবে না, সেদিন নির্ধারিত শিফটও থাকবে না।</p></details><details><summary>ট্রেডিংয়ের এক্সপার্ট হওয়া কি লাগবে?</summary><p>না। Buy/Sell, লট বা কন্ট্র্যাক্ট সাইজ এবং অর্ডারের বেসিক ধারণা, নির্দেশনা বুঝে দ্রুত কাজ করার দক্ষতা ও নির্ভুলতা থাকাই প্রাথমিকভাবে গুরুত্বপূর্ণ।</p></details><details><summary>নিজের টাকা বিনিয়োগ করতে হবে?</summary><p>না। আবেদন ফি, রেজিস্ট্রেশন ফি বা নিজের অর্থ দিয়ে ট্রেড করার কোনো শর্ত নেই। কেউ এই নামে অর্থ চাইলে দেবেন না।</p></details><details><summary>কম্পিটিশনে না জিতলে কি কোনো পারিশ্রমিক আছে?</summary><p>এটি পুরস্কারভিত্তিক ইনসেনটিভের প্রস্তাব। পুরস্কার না এলে নির্ধারিত স্ল্যাবের অর্থ প্রযোজ্য হবে না। নির্বাচনের আগে বিস্তারিত লিখিত পেমেন্ট নীতি ও প্রযোজ্য শ্রম-আইনের শর্ত স্পষ্ট করতে হবে।</p></details><details><summary>একাধিক অ্যাকাউন্ট ব্যবহার করা যাবে?</summary><p>কেবল সেই অ্যাকাউন্ট ও কাজের ক্ষেত্রেই, যেখানে প্ল্যাটফর্ম এবং প্রতিযোগিতার নিয়ম অনুযায়ী স্পষ্ট অনুমোদন আছে। NinjaTrader Arena-তে একই প্রতিযোগীর একাধিক এন্ট্রি নিষিদ্ধ; বিধি ভঙ্গ করে অ্যাকাউন্ট পরিচালনা করা যাবে না।</p></details></div></div></section>
 </main>
 <footer class="footer"><div class="wrap footer-inner"><div><strong>REMOTE TRADING OPERATIONS</strong><p>Independent recruitment opportunity referencing NinjaTrader® Arena. Not an official NinjaTrader job, event, advertisement, partnership, sponsorship or endorsement. Trademark belongs to its owner.</p><p><a href="https://support.ninjatrader.com/s/article/NinjaTrader-Arena-Step-by-Step-Guide?language=en_US" target="_blank" rel="noopener">Official competition rules & eligibility ↗</a> · <a href="https://t.me/lotmanager" target="_blank" rel="noopener noreferrer">Contact @lotmanager ↗</a></p></div><div style="white-space:nowrap">© 2026 Independent recruitment page</div></div></footer>
+
+<div class="path-bottom" role="navigation" aria-label="দুইভাবে অংশগ্রহণ করুন">
+  <div class="path-bottom-inner">
+    <a id="pathJob" class="path-bottom-link is-active" href="#apply"><span class="path-mini">OPERATOR ROLE</span><strong>আমি জব করতে চাই</strong></a>
+    <a id="pathCompete" class="path-bottom-link" href="#join-competition"><span class="path-mini">OWN ACCOUNT</span><strong>আমি কম্পিটিশনে অংশ নিতে চাই</strong></a>
+  </div>
+</div>
+
 <script>
 (()=>{
 'use strict';
@@ -169,6 +237,11 @@ document.querySelectorAll('.proof-open[data-proof]').forEach(b=>b.addEventListen
 document.getElementById('proofDialogClose').addEventListener('click',()=>proofDialog.close());
 proofDialog.addEventListener('click',e=>{if(e.target===proofDialog)proofDialog.close()});
 proofDialog.addEventListener('close',()=>{proofDialogImage.removeAttribute('src')});
+
+
+const pathJob=document.getElementById('pathJob'),pathCompete=document.getElementById('pathCompete');
+function updatePathLinks(){const comp=window.location.hash==='#join-competition';pathJob.classList.toggle('is-active',!comp);pathCompete.classList.toggle('is-active',comp);if(comp){pathCompete.setAttribute('aria-current','location');pathJob.removeAttribute('aria-current')}else{pathJob.setAttribute('aria-current','location');pathCompete.removeAttribute('aria-current')}}
+window.addEventListener('hashchange',updatePathLinks);updatePathLinks();
 
 // Deterministic illustration only — never used for trading decisions.
 const canvas=document.getElementById('marketChart');const ctx=canvas.getContext('2d');let frame=0;
