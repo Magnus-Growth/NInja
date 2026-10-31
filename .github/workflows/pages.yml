@@ -72,12 +72,21 @@ jobs:
           assert 'dataLayer.push(arguments)' in analytics
           assert not any(x in analytics for x in ('formData.fullName','formData.phone','formData.telegram','encodeURIComponent(msg)'))
 
-          script = re.search(r'<script>(.*?)</script>',html,re.S)
-          assert script, 'Missing inline JavaScript'
-          Path('/tmp/ninja-inline.js').write_text(script.group(1),encoding='utf-8')
-          print('HTML form and gallery checks passed')
+          # Basic Consent Mode: a denied default is set high in the head,
+          # while the external analytics library is loaded only after opt-in.
+          assert html.index('id="google-tag-consent-default"') < html.index('</head>')
+          assert 'analytics_storage: \'denied\'' in html
+          assert "window.gtag('consent', 'update'" in analytics
+          assert 'googletagmanager.com/gtag/js?id=' not in html
+          scripts = re.findall(r'<script(?:\\s+[^>]*)?>(.*?)</script>',html,re.S)
+          scripts = [s for s in scripts if s.strip()]
+          assert len(scripts) == 2, ('Expected bootstrap and app inline JS',len(scripts))
+          for i,script in enumerate(scripts):
+              Path(f'/tmp/ninja-inline-{i}.js').write_text(script,encoding='utf-8')
+          print('Two forms, eight images, privacy consent and scripts verified')
           PY
-          node --check /tmp/ninja-inline.js
+          node --check /tmp/ninja-inline-0.js
+          node --check /tmp/ninja-inline-1.js
           node --check dist/assets/analytics.js
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
