@@ -1,0 +1,46 @@
+name: Deploy landing page to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Prepare static website
+        run: |
+          mkdir -p dist
+          cp index.html dist/index.html
+          cp -R assets dist/assets
+          test "$(find dist/assets/wins -maxdepth 1 -name 'win-*.webp' | wc -l)" -eq 8
+          grep -q 'id="competition-wins"' dist/index.html
+          for n in $(seq 1 8); do
+            f="dist/assets/wins/win-$(printf '%02d' "$n").webp"
+            test -s "$f" || { echo "Missing image: $f"; exit 1; }
+          done
+          touch dist/.nojekyll
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Deploy site
+        id: deployment
+        uses: actions/deploy-pages@v4
