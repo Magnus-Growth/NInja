@@ -92,6 +92,19 @@ body{padding-bottom:calc(79px + env(safe-area-inset-bottom))}
 .compete-notice{margin-top:24px;background:#241d1c;border:1px solid #684335;border-radius:13px;padding:18px 22px;color:#e2c7b6;font-size:13px;line-height:1.85}.compete-notice strong{color:#ffd1b0}.compete-notice a{color:#ffc093;text-decoration:underline}
 @media(max-width:850px){.compete-layout{grid-template-columns:1fr}.compete-intro{text-align:left}.compete-intro .section-desc{margin:0}}
 @media(max-width:600px){body{padding-bottom:calc(85px + env(safe-area-inset-bottom))}.path-bottom{padding:7px 9px calc(7px + env(safe-area-inset-bottom))}.path-bottom-inner{gap:7px}.path-bottom-link{min-height:62px}.path-bottom-link strong{font-size:12px}.path-bottom-link .path-mini{font-size:8px}.compete-feature,.compete-steps{padding:22px 18px}.compete-split{min-height:165px}.compete-notice{padding:15px}}
+
+/* Competition-specific contact form */
+#competition-form{scroll-margin-top:104px}
+.competition-contact{margin:58px auto 6px;max-width:960px}
+.competition-form-heading{text-align:center;max-width:720px;margin:0 auto 26px}
+.competition-form-heading h3{font-size:clamp(24px,3vw,34px);line-height:1.25;margin:12px 0}
+.competition-form-heading p{color:#b4c4d2;margin:0;font-size:14px}
+.competition-form-shell{background:#121e2a;border:1px solid #43566a}
+.competition-form-shell .form-head span{background:#183d32;color:#a6ebce;border-color:#386a56}
+.competition-agreements{background:#172833;border:1px solid #304b54;padding:12px 18px;border-radius:10px;margin:24px 0 18px}
+.competition-agreements .checkbox-row{margin:12px 0}
+.competition-form-help{margin:12px 0 0;color:#a9bccb;font-size:12px}
+@media(max-width:660px){.competition-form-shell{padding:20px 16px}.competition-form-shell .fields{grid-template-columns:1fr}.competition-form-shell .field{grid-column:1/-1}.competition-form-heading{text-align:left}.competition-agreements{padding:10px 12px}}
 </style>
 </head>
 <body>
@@ -127,7 +140,6 @@ body{padding-bottom:calc(79px + env(safe-area-inset-bottom))}
 <article class="proof-card"><button type="button" class="proof-open" data-proof="assets/wins/win-06.webp?v=20261101" data-caption="$100.00 USD · 17 July 2026 · Processed" aria-label="$100.00 USD · 17 July 2026 · Processed — রসিদ বড় করে দেখুন"><img src="assets/wins/win-06.webp?v=20261101" alt="Realtime Media NinjaTrader payment notice, $100.00, 17 July 2026, Processed; personal details hidden" loading="lazy" decoding="async"></button><div class="proof-meta"><div class="proof-top"><span class="proof-amount">$100.00</span><span class="proof-status processed">PROCESSED</span></div><div class="proof-date">17 July 2026</div><div class="proof-by">NinjaTrader · Realtime Media notice</div></div></article>
 <article class="proof-card"><button type="button" class="proof-open" data-proof="assets/wins/win-07.webp?v=20261101" data-caption="$100.00 USD · 26 March 2026 · Processed" aria-label="$100.00 USD · 26 March 2026 · Processed — রসিদ বড় করে দেখুন"><img src="assets/wins/win-07.webp?v=20261101" alt="Realtime Media NinjaTrader payment notice, $100.00, 26 March 2026, Processed; personal details hidden" loading="lazy" decoding="async"></button><div class="proof-meta"><div class="proof-top"><span class="proof-amount">$100.00</span><span class="proof-status processed">PROCESSED</span></div><div class="proof-date">26 March 2026</div><div class="proof-by">NinjaTrader · Realtime Media notice</div></div></article>
 <article class="proof-card"><button type="button" class="proof-open" data-proof="assets/wins/win-08.webp?v=20261101" data-caption="$125.00 USD · 13 October 2026 · Processing" aria-label="$125.00 USD · 13 October 2026 · Processing — রসিদ বড় করে দেখুন"><img src="assets/wins/win-08.webp?v=20261101" alt="Realtime Media NinjaTrader payment notice, $125.00, 13 October 2026, Processing; personal details hidden" loading="lazy" decoding="async"></button><div class="proof-meta"><div class="proof-top"><span class="proof-amount">$125.00</span><span class="proof-status processing">PROCESSING</span></div><div class="proof-date">13 October 2026</div><div class="proof-by">NinjaTrader · Realtime Media notice</div></div></article></div>
-<div class="proof-disclaimer">নোট: এগুলো শেয়ার করা পেমেন্ট নোটিশের স্ক্রিনশট; ব্যাংকে অর্থ জমার স্বাধীন যাচাই নয়। <strong>Processing</strong> চিহ্নিত নোটিশগুলোতে অর্থ আসার প্রক্রিয়া চলছিল, <strong>Processed</strong> মানে পেমেন্ট প্রক্রিয়াকরণ সম্পন্ন হয়েছে বলে নোটিশে উল্লেখ আছে। গোপনীয়তার জন্য নাম ও পেমেন্ট আইডি আড়াল করা হয়েছে। ভবিষ্যৎ জয় বা ইনসেনটিভ নিশ্চিত নয়।</div>
 </div></section>
 <dialog class="proof-dialog" id="proofDialog" aria-label="পেমেন্ট নোটিশের বড় ছবি"><div class="proof-dialog-top"><span class="proof-dialog-title" id="proofDialogTitle">Payment notice</span><button class="proof-dialog-close" id="proofDialogClose" type="button" aria-label="ছবি বন্ধ করুন">বন্ধ করুন ✕</button></div><img class="proof-dialog-image" id="proofDialogImage" alt="পেমেন্ট নোটিশের বড় ছবি"></dialog>
 
@@ -141,9 +153,8 @@ body{padding-bottom:calc(79px + env(safe-area-inset-bottom))}
 <section class="section req" id="requirements"><div class="wrap"><span class="eyebrow">REQUIREMENTS · WHO CAN APPLY</span><h2 class="section-title">আপনার কী কী থাকা লাগবে?</h2><p class="section-desc">বিশেষজ্ঞ ট্রেডার হতে হবে না। যেহেতু দ্রুত অর্ডার এক্সিকিউশন ও একাধিক স্ক্রিন/ট্যাব নেভিগেশন করতে হবে, তাই ডিভাইসের পারফরম্যান্স এবং মনোযোগ গুরুত্বপূর্ণ।</p>
  <div class="req-layout"><div class="req-card"><h3><span class="icon-square">⌘</span> টেকনিক্যাল সেটআপ</h3><div class="feature"><em>✓</em> ব্যক্তিগত ও নির্ভরযোগ্য ল্যাপটপ / ডেস্কটপ</div><div class="feature"><em>✓</em> কমপক্ষে ৮ GB RAM সুপারিশ; ১৬ GB হলে ভালো</div><div class="feature"><em>✓</em> ভালো পারফরম্যান্সের স্মার্টফোন</div><div class="feature"><em>✓</em> স্থিতিশীল ইন্টারনেট ও সম্ভাব্য ব্যাকআপ সংযোগ</div><div class="feature"><em>✓</em> একাধিক ট্যাব ও অ্যাকাউন্টে দ্রুত নেভিগেশন</div></div>
  <div class="req-card"><h3><span class="icon-square">◎</span> ব্যক্তিগত দক্ষতা</h3><div class="feature"><em>✓</em> Buy, Sell, Position, Lot/Contract সম্পর্কে বেসিক ধারণা</div><div class="feature"><em>✓</em> দ্রুত এবং নির্ভুলভাবে নির্দেশনা অনুসরণ</div><div class="feature"><em>✓</em> প্রতিযোগিতার দিন সন্ধ্যা–রাত ৩টা পর্যন্ত উপলব্ধতা</div><div class="feature"><em>✓</em> Telegram-এ সক্রিয় যোগাযোগের সক্ষমতা</div><div class="feature"><em>✓</em> বয়স ১৮+ এবং দায়িত্বশীলতা ও গোপনীয়তা বজায় রাখা</div></div></div>
- <div class="rules"><span style="font-size:20px">ⓘ</span><div><strong>প্রতিযোগিতার নিয়ম সবার আগে:</strong> NinjaTrader Arena-তে একজনের একাধিক এন্ট্রি নিষিদ্ধ। সব অ্যাকাউন্ট অপারেশন, অ্যাক্সেস ও ট্রেডিং দায়িত্ব প্ল্যাটফর্মের বিধি এবং প্রকৃত অ্যাকাউন্ট মালিকের অনুমোদনের সাপেক্ষে হবে। আবেদন পর্যায়ে কাউকে লগইন পাসওয়ার্ড বা অর্থ দিতে হবে না।</div></div>
  </div></section>
-<section class="section application" id="apply"><div class="wrap apply-layout"><div class="apply-left"><span class="eyebrow">APPLICATION · JOIN THE TEAM</span><h2 class="section-title">Interested?<br>এখনই আবেদন করুন।</h2><p class="section-desc">আপনার সম্পর্কে এবং ব্যবহার করা ডিভাইস সম্পর্কে কিছু তথ্য দিন। আমরা প্রাথমিকভাবে উপযুক্ত আবেদনগুলো যাচাই করব।</p><div class="checklist"><div><span class="tick">✓</span> কোনো আবেদন ফি বা ইনভেস্টমেন্ট নেই</div><div><span class="tick">✓</span> আগে থেকে ট্রেডিং এক্সপার্ট হওয়া বাধ্যতামূলক নয়</div><div><span class="tick">✓</span> চূড়ান্ত নির্বাচনের আগে কাজ ও পেমেন্ট শর্ত জানানো হবে</div><div><span class="tick">✓</span> আপনার তথ্য শুধু নিয়োগ যাচাইয়ের উদ্দেশ্যে ব্যবহৃত হবে</div></div><p class="tiny-note">স্বতন্ত্র টিমের নিয়োগের সুযোগ। NinjaTrader® এই নিয়োগ পরিচালনা বা স্পনসর করে না।</p></div>
+<section class="section application" id="apply"><div class="wrap apply-layout"><div class="apply-left"><span class="eyebrow">APPLICATION · JOIN THE TEAM</span><h2 class="section-title">Interested?<br>এখনই আবেদন করুন।</h2><p class="section-desc">আপনার সম্পর্কে এবং ব্যবহার করা ডিভাইস সম্পর্কে কিছু তথ্য দিন। আমরা প্রাথমিকভাবে উপযুক্ত আবেদনগুলো যাচাই করব।</p><div class="checklist"><div><span class="tick">✓</span> কোনো আবেদন ফি বা ইনভেস্টমেন্ট নেই</div><div><span class="tick">✓</span> আগে থেকে ট্রেডিং এক্সপার্ট হওয়া বাধ্যতামূলক নয়</div><div><span class="tick">✓</span> চূড়ান্ত নির্বাচনের আগে কাজ ও পেমেন্ট শর্ত জানানো হবে</div><div><span class="tick">✓</span> আপনার তথ্য শুধু নিয়োগ যাচাইয়ের উদ্দেশ্যে ব্যবহৃত হবে</div></div></div>
  <div class="form-shell"><div class="form-head"><div><h3>Application Form</h3><div class="muted" style="font-size:12px;margin-top:5px">সঠিক তথ্য দিয়ে ফর্ম পূরণ করুন</div></div><span>NO APPLICATION FEE</span></div>
  <form id="applicationForm" novalidate><div class="fields"><div class="form-category">01 / Personal Information</div>
  <div class="field"><label for="fullName">আপনার পূর্ণ নাম *</label><input id="fullName" name="fullName" required maxlength="90" placeholder="যেমন: মোহাম্মদ রহিম" autocomplete="name" /></div>
@@ -183,19 +194,56 @@ body{padding-bottom:calc(79px + env(safe-area-inset-bottom))}
           <div class="split-team"><strong>50%</strong><span>টিম কমিশন</span><small>TEAM SHARE</small></div>
         </div>
         <p class="compete-calc">উদাহরণ: প্রতিযোগিতার পুরস্কার হিসেবে প্রকৃতপক্ষে <strong>$100</strong> পাওয়া গেলে প্রস্তাবিত ভাগ—<strong>$50 আপনার</strong>, <strong>$50 টিমের</strong>। এটি আয়োজকের কোনো অফিসিয়াল কমিশন স্কিম নয়; স্বতন্ত্র পক্ষগুলোর মধ্যে আগাম লিখিত চুক্তির প্রস্তাব।</p>
-        <div class="compete-badges"><span>নিজের অ্যাকাউন্ট</span><span>নিজের পরিচয়</span><span>জয়ের নিশ্চয়তা নেই</span></div>
+        <div class="compete-badges"><span>নিজের অ্যাকাউন্ট</span><span>নিজের পরিচয়</span></div>
       </div>
       <div class="compete-steps">
         <h3>কীভাবে শুরু করবেন?</h3>
         <div class="compete-step"><b>01</b><div><strong>নিজে রেজিস্ট্রেশন করুন</strong><p>যে প্রতিযোগিতায় অংশ নেবেন, তার বয়স, দেশ, পরিচয় ও এক-এন্ট্রি-প্রতি-ব্যক্তি নীতি আগে যাচাই করুন। অ্যাকাউন্টের পূর্ণ নিয়ন্ত্রণ আপনারই থাকবে।</p></div></div>
         <div class="compete-step"><b>02</b><div><strong>Telegram-এ যোগাযোগ করুন</strong><p>আমাদের সঙ্গে যোগাযোগ করে অনুমোদিত কমিউনিটি, ট্রেড আইডিয়া/সিগন্যাল, যোগ্যতা এবং কমিশনের লিখিত শর্ত জেনে নিন। গ্রুপে যুক্ত করার বিষয়টি টিম নিশ্চিত করবে।</p></div></div>
         <div class="compete-step"><b>03</b><div><strong>নিজে সিদ্ধান্ত নিয়ে অংশ নিন</strong><p>কোনো ট্রেড আইডিয়া ব্যবহার প্ল্যাটফর্মের নিয়মে বৈধ হলে তবেই অনুসরণ করুন। জয়ের পর প্রকৃত পুরস্কার প্রাপ্তি ও লিখিত সম্মতি অনুযায়ী ৫০%–৫০% ভাগ প্রযোজ্য হতে পারে।</p></div></div>
-        <a id="competeJoinLink" class="compete-action" href="https://t.me/lotmanager?text=%E0%A6%86%E0%A6%B8%E0%A6%B8%E0%A6%BE%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%81%20%E0%A6%86%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%95%E0%A7%81%E0%A6%AE%E0%A5%A4%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%86%E0%A6%AE%E0%A6%BE%E0%A6%B0%20%E0%A6%A8%E0%A6%BF%E0%A6%9C%E0%A7%87%E0%A6%B0%20NinjaTrader%20Arena%20%E0%A6%85%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A6%BE%E0%A6%89%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A7%87%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A7%9F%20%E0%A6%85%E0%A6%82%E0%A6%B6%20%E0%A6%A8%E0%A6%BF%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4%20%E0%A6%86%E0%A6%AA%E0%A6%A8%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B0%20%E0%A6%9F%E0%A7%8D%E0%A6%B0%E0%A7%87%E0%A6%A1%20%E0%A6%86%E0%A6%87%E0%A6%A1%E0%A6%BF%E0%A7%9F%E0%A6%BE%2F%E0%A6%B8%E0%A6%BF%E0%A6%97%E0%A6%A8%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%B2%20%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A7%81%E0%A6%AA%E0%A7%87%20%E0%A6%AF%E0%A7%8B%E0%A6%97%20%E0%A6%A6%E0%A7%87%E0%A6%93%E0%A7%9F%E0%A6%BE%E0%A6%B0%20%E0%A6%A8%E0%A6%BF%E0%A7%9F%E0%A6%AE%2C%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A4%E0%A6%BF%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A6%BF%E0%A6%A4%E0%A6%BE%E0%A6%B0%20%E0%A6%AF%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%AF%E0%A6%A4%E0%A6%BE%20%E0%A6%8F%E0%A6%AC%E0%A6%82%20%E0%A6%9C%E0%A6%BF%E0%A6%A4%E0%A6%B2%E0%A7%87%20%E0%A7%AB%E0%A7%A6%25%20%E0%A6%85%E0%A6%82%E0%A6%B6%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%B9%E0%A6%A3%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A7%80%20%2F%20%E0%A7%AB%E0%A7%A6%25%20%E0%A6%9F%E0%A6%BF%E0%A6%AE%20%E0%A6%95%E0%A6%AE%E0%A6%BF%E0%A6%B6%E0%A6%A8%E0%A7%87%E0%A6%B0%20%E0%A6%B2%E0%A6%BF%E0%A6%96%E0%A6%BF%E0%A6%A4%20%E0%A6%B6%E0%A6%B0%E0%A7%8D%E0%A6%A4%20%E0%A6%9C%E0%A6%BE%E0%A6%A8%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4%20%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%A8%E0%A6%BF%E0%A6%9C%E0%A7%87%E0%A6%B0%20%E0%A6%85%E0%A7%8D%E0%A6%AF%E0%A6%BE%E0%A6%95%E0%A6%BE%E0%A6%89%E0%A6%A8%E0%A7%8D%E0%A6%9F%20%E0%A6%93%20%E0%A6%B8%E0%A6%BF%E0%A6%A6%E0%A7%8D%E0%A6%A7%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A4%E0%A7%87%E0%A6%B0%20%E0%A6%A6%E0%A6%BE%E0%A7%9F%E0%A6%BF%E0%A6%A4%E0%A7%8D%E0%A6%AC%20%E0%A6%A8%E0%A6%BF%E0%A6%9C%E0%A7%87%20%E0%A6%A8%E0%A7%87%E0%A6%AC%E0%A5%A4" target="_blank" rel="noopener noreferrer">Telegram-এ যোগদানের অনুরোধ পাঠান <span aria-hidden="true">↗</span></a>
-        <p class="compete-small">এটি সরাসরি <strong>@lotmanager</strong>-এর চ্যাটে একটি প্রস্তুত বার্তা খুলবে। আপনাকে নিজে Send চাপতে হবে। Telegram গ্রুপের সরাসরি আমন্ত্রণ লিংক এখনো দেওয়া হয়নি।</p>
+        <a id="competeJoinLink" class="compete-action" href="#competition-form">কম্পিটিশনে অংশগ্রহণের ফর্ম পূরণ করুন <span aria-hidden="true">↗</span></a><p class="compete-small">এটি জবের ফর্ম থেকে আলাদা। আপনার তথ্য পূরণ করে Telegram-এ অংশগ্রহণের অনুরোধ পাঠাতে পারবেন।</p>
       </div>
     </div>
-    <div class="compete-notice"><strong>অবশ্যই পড়ুন:</strong> NinjaTrader Arena-তে একই ব্যক্তির একাধিক এন্ট্রি নিষিদ্ধ। দলবদ্ধ/সমন্বিত ট্রেডিং বা অন্যের সিগন্যাল ব্যবহার আপনার নির্দিষ্ট প্রতিযোগিতার নিয়মে অনুমোদিত কি না আমরা নিশ্চিত করতে পারিনি—নিয়ম অনুমতি না দিলে সেভাবে অংশ নেবেন না। টিম আপনার পাসওয়ার্ড, OTP, অ্যাকাউন্টের নিয়ন্ত্রণ বা অগ্রিম অর্থ চাইবে না। দেশভেদে যোগ্যতা ও প্রযোজ্য আইন আলাদা হতে পারে। <a href="https://arena.ninjatrader.com/downloads/arena-terms-conditions.pdf" target="_blank" rel="noopener noreferrer">অফিসিয়াল Arena নিয়ম পড়ুন ↗</a></div>
+    
+<div class="competition-contact" id="competition-form">
+  <header class="competition-form-heading"><span class="eyebrow">JOIN THE COMMUNITY · OWN ACCOUNT</span>
+    <h3>কম্পিটিশনে অংশগ্রহণের জন্য যোগাযোগ করুন</h3>
+    <p>আপনার নিজের NinjaTrader Arena অ্যাকাউন্টে অংশ নেওয়ার আগ্রহ, অভিজ্ঞতা ও যোগাযোগের তথ্য দিন।</p>
+  </header>
+  <div class="form-shell competition-form-shell">
+    <div class="form-head"><div><h3>Competition Participation Form</h3><div class="muted" style="font-size:12px;margin-top:5px">জব আবেদন নয়—শুধু কম্পিটিশন অংশগ্রহণ</div></div><span>OWN ACCOUNT</span></div>
+    <form id="competitionForm" novalidate>
+      <div class="fields">
+        <div class="form-category">01 / Personal Information</div>
+        <div class="field"><label for="cpFullName">পূর্ণ নাম *</label><input id="cpFullName" name="fullName" required maxlength="90" autocomplete="name" placeholder="আপনার পূর্ণ নাম" /></div>
+        <div class="field"><label for="cpAge">বয়স (১৮+) *</label><input id="cpAge" name="age" type="number" required min="18" max="85" placeholder="যেমন: ২৪" /></div>
+        <div class="field"><label for="cpCountry">বর্তমান দেশ *</label><input id="cpCountry" name="country" required maxlength="80" placeholder="যেমন: বাংলাদেশ" autocomplete="country-name" /></div>
+        <div class="field"><label for="cpCity">জেলা / শহর *</label><input id="cpCity" name="city" required maxlength="100" autocomplete="address-level2" placeholder="যেমন: ঢাকা" /></div>
+        <div class="field"><label for="cpPhone">WhatsApp / মোবাইল নম্বর *</label><input id="cpPhone" name="phone" type="tel" required maxlength="30" autocomplete="tel" placeholder="01XXXXXXXXX" /></div>
+        <div class="field"><label for="cpTelegram">Telegram Username *</label><input id="cpTelegram" name="telegram" required maxlength="70" autocapitalize="off" placeholder="@username" /></div>
+        <div class="form-category">02 / Competition & Trading</div>
+        <div class="field"><label for="cpAccountStatus">নিজের Arena অ্যাকাউন্ট আছে? *</label><select id="cpAccountStatus" name="accountStatus" required><option value="">সিলেক্ট করুন</option><option>হ্যাঁ, নিজের অ্যাকাউন্ট আছে</option><option>না, অ্যাকাউন্ট খুলতে চাই</option><option>আগে বিস্তারিত জানতে চাই</option></select></div>
+        <div class="field"><label for="cpArenaExperience">আগে Arena কম্পিটিশনে অংশ নিয়েছেন? *</label><select id="cpArenaExperience" name="arenaExperience" required><option value="">সিলেক্ট করুন</option><option>হ্যাঁ, অংশ নিয়েছি</option><option>না, প্রথমবার অংশ নেব</option><option>কম্পিটিশন দেখেছি, খেলিনি</option></select></div>
+        <div class="field"><label for="cpTradingExperience">ট্রেডিং অভিজ্ঞতা *</label><select id="cpTradingExperience" name="tradingExperience" required><option value="">সিলেক্ট করুন</option><option>বেসিক ধারণা আছে</option><option>Demo / Paper Trading</option><option>৬ মাসের কম</option><option>৬ মাস–২ বছর</option><option>২ বছরের বেশি</option></select></div>
+        <div class="field"><label for="cpAvailability">কম্পিটিশনের সময় উপলব্ধতা *</label><select id="cpAvailability" name="availability" required><option value="">সিলেক্ট করুন</option><option>সন্ধ্যা থেকে রাত ৩টা</option><option>আগে জানালে পারব</option><option>আংশিক সময় পারব</option></select></div>
+        <div class="field"><label for="cpSignalExperience">ট্রেডিং সিগন্যাল বোঝার অভিজ্ঞতা <span class="optional">(ঐচ্ছিক)</span></label><select id="cpSignalExperience" name="signalExperience"><option value="">সিলেক্ট করুন</option><option>অভিজ্ঞতা আছে</option><option>কিছুটা ধারণা আছে</option><option>নেই, জানতে চাই</option></select></div>
+        <div class="field"><label for="cpMarket">আগ্রহের Futures মার্কেট <span class="optional">(ঐচ্ছিক)</span></label><select id="cpMarket" name="market"><option value="">সিলেক্ট করুন</option><option>ES / S&P 500</option><option>NQ / Nasdaq</option><option>অন্যান্য</option><option>এখনো ঠিক করিনি</option></select></div>
+        <div class="field full"><label for="cpNotes">অতিরিক্ত তথ্য / প্রশ্ন <span class="optional">(ঐচ্ছিক)</span></label><textarea id="cpNotes" name="notes" maxlength="500" placeholder="আপনার প্রশ্ন, অভিজ্ঞতা বা অংশগ্রহণের পরিকল্পনা লিখুন।"></textarea></div>
+      </div>
+      <div class="competition-agreements">
+        <div class="checkbox-row"><input type="checkbox" id="cpOwn" name="own" required/><label for="cpOwn">আমি আমার নিজের নামে নিজের অ্যাকাউন্ট ব্যবহার করে অংশ নিতে আগ্রহী। *</label></div>
+        <div class="checkbox-row"><input type="checkbox" id="cpShare" name="share" required/><label for="cpShare">পুরস্কার প্রকৃতপক্ষে পাওয়া গেলে আগাম লিখিত চুক্তি সাপেক্ষে ৫০% আমার ও ৫০% টিমের ভাগাভাগির প্রস্তাব বুঝেছি। *</label></div>
+        <div class="checkbox-row"><input type="checkbox" id="cpConsent" name="consent" required/><label for="cpConsent">আমার তথ্য @lotmanager-এর সঙ্গে যোগাযোগ ও অংশগ্রহণ যাচাইয়ের উদ্দেশ্যে পাঠাতে সম্মত। *</label></div>
+      </div>
+      <div style="display:none" aria-hidden="true"><input type="text" id="cpCompanySite" name="companySite" tabindex="-1" autocomplete="off"></div>
+      <button id="cpSendButton" class="btn-primary btn-wide" type="submit">Telegram-এ কম্পিটিশনের আবেদন পাঠান ↗</button>
+      <div class="secondary-tools"><button id="cpCopyButton" type="button" class="copy-button">আবেদন কপি করুন</button><a class="copy-button" href="https://t.me/lotmanager" target="_blank" rel="noopener noreferrer">Telegram চ্যাট খুলুন ↗</a><span id="cpFormStatus" class="status" role="status" aria-live="polite"></span></div>
+      <p class="competition-form-help">বাটনে ক্লিক করলে আপনার আবেদনটি @lotmanager-এর Telegram চ্যাটে খসড়া হিসেবে খুলবে। Telegram-এ <strong>Send</strong> চাপলে পাঠানো হবে।</p>
+    </form>
   </div>
+</div>
+
+</div>
 </section>
 
 <section class="section faq" id="faq"><div class="wrap"><div style="text-align:center"><span class="eyebrow">COMMON QUESTIONS</span><h2 class="section-title">কিছু সাধারণ প্রশ্ন</h2></div><div class="faq-list"><details><summary>প্রতিদিন কাজ করতে হবে?</summary><p>না। এই সুযোগটি শুধুমাত্র আগে থেকে নির্ধারিত প্রতিযোগিতার দিনের জন্য। যেদিন প্রতিযোগিতা থাকবে না, সেদিন নির্ধারিত শিফটও থাকবে না।</p></details><details><summary>ট্রেডিংয়ের এক্সপার্ট হওয়া কি লাগবে?</summary><p>না। Buy/Sell, লট বা কন্ট্র্যাক্ট সাইজ এবং অর্ডারের বেসিক ধারণা, নির্দেশনা বুঝে দ্রুত কাজ করার দক্ষতা ও নির্ভুলতা থাকাই প্রাথমিকভাবে গুরুত্বপূর্ণ।</p></details><details><summary>নিজের টাকা বিনিয়োগ করতে হবে?</summary><p>না। আবেদন ফি, রেজিস্ট্রেশন ফি বা নিজের অর্থ দিয়ে ট্রেড করার কোনো শর্ত নেই। কেউ এই নামে অর্থ চাইলে দেবেন না।</p></details><details><summary>কম্পিটিশনে না জিতলে কি কোনো পারিশ্রমিক আছে?</summary><p>এটি পুরস্কারভিত্তিক ইনসেনটিভের প্রস্তাব। পুরস্কার না এলে নির্ধারিত স্ল্যাবের অর্থ প্রযোজ্য হবে না। নির্বাচনের আগে বিস্তারিত লিখিত পেমেন্ট নীতি ও প্রযোজ্য শ্রম-আইনের শর্ত স্পষ্ট করতে হবে।</p></details><details><summary>একাধিক অ্যাকাউন্ট ব্যবহার করা যাবে?</summary><p>কেবল সেই অ্যাকাউন্ট ও কাজের ক্ষেত্রেই, যেখানে প্ল্যাটফর্ম এবং প্রতিযোগিতার নিয়ম অনুযায়ী স্পষ্ট অনুমোদন আছে। NinjaTrader Arena-তে একই প্রতিযোগীর একাধিক এন্ট্রি নিষিদ্ধ; বিধি ভঙ্গ করে অ্যাকাউন্ট পরিচালনা করা যাবে না।</p></details></div></div></section>
@@ -223,6 +271,27 @@ function valid(){if(!form.checkValidity()){form.reportValidity();return false}co
 function state(msg,good=false){status.textContent=msg;status.className='status'+(good?' success':'')}
 form.addEventListener('submit',async e=>{e.preventDefault();if(!valid())return;if(form.companySite.value)return;const d=getData();const msg=formatMessage(d);if(APPLICATION_ENDPOINT){send.disabled=true;send.textContent='পাঠানো হচ্ছে...';try{const res=await fetch(APPLICATION_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});const result=await res.json().catch(()=>({}));if(!res.ok||!result.ok)throw new Error('Send failed');state('আপনার আবেদন পাঠানো হয়েছে।',true);form.reset();}catch(error){state('আবেদন পাঠানো যায়নি। পরে আবার চেষ্টা করুন বা কপি করুন।')}finally{send.disabled=false;send.textContent='Telegram-এ সরাসরি আবেদন পাঠান ↗';}}else{state('@lotmanager-এর চ্যাটে খসড়া আবেদন খুলছে। Telegram-এ Send চাপুন; খসড়া না এলে কপি করে পেস্ট করুন।');const draft='https://t.me/'+TELEGRAM_USERNAME+'?text='+encodeURIComponent(msg);window.open(draft,'_blank','noopener,noreferrer');}});
 document.getElementById('copyButton').addEventListener('click',async()=>{if(!valid())return;const msg=formatMessage(getData());try{await navigator.clipboard.writeText(msg);state('আবেদনের তথ্য কপি হয়েছে।',true);}catch(e){const t=document.createElement('textarea');t.value=msg;document.body.append(t);t.select();const ok=document.execCommand('copy');t.remove();state(ok?'কপি হয়েছে।':'কপি করা যায়নি; @lotmanager-এ সরাসরি যোগাযোগ করুন।',ok)}});
+
+
+/* Competition participation: independent contact form, manual Telegram delivery. */
+const competitionForm=document.getElementById('competitionForm'),competitionStatus=document.getElementById('cpFormStatus');
+function competitionData(){return Object.fromEntries(new FormData(competitionForm).entries())}
+function competitionMessage(d){return [
+'🏆 NinjaTrader Arena — Own Account Competition Enquiry','',
+'নাম: '+d.fullName,'বয়স: '+d.age,'দেশ: '+d.country,'শহর: '+d.city,
+'WhatsApp/ফোন: '+d.phone,'Telegram: '+d.telegram,
+'নিজের Arena অ্যাকাউন্ট: '+d.accountStatus,
+'Arena অংশগ্রহণের অভিজ্ঞতা: '+d.arenaExperience,
+'ট্রেডিং অভিজ্ঞতা: '+d.tradingExperience,'উপলব্ধতা: '+d.availability,
+'সিগন্যাল বোঝার অভিজ্ঞতা: '+(d.signalExperience||'উল্লেখ নেই'),
+'মার্কেট: '+(d.market||'উল্লেখ নেই'),'অতিরিক্ত তথ্য: '+(d.notes||'নেই'),'',
+'নিজের নামে নিজস্ব অ্যাকাউন্ট: সম্মত',
+'প্রকৃত পুরস্কার প্রাপ্তি ও লিখিত চুক্তি সাপেক্ষে ৫০% / ৫০% প্রস্তাব: অবগত',
+'যোগাযোগের জন্য তথ্য পাঠাতে সম্মতি: হ্যাঁ'].join('\n')}
+function competitionValid(){if(!competitionForm.checkValidity()){competitionForm.reportValidity();return false}return true}
+function competitionSetStatus(msg,ok=false){competitionStatus.textContent=msg;competitionStatus.className='status'+(ok?' success':'')}
+competitionForm.addEventListener('submit',e=>{e.preventDefault();if(!competitionValid()||competitionForm.elements.namedItem('companySite').value)return;const msg=competitionMessage(competitionData());window.open('https://t.me/'+TELEGRAM_USERNAME+'?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');competitionSetStatus('Telegram-এ আবেদন খুলেছে। Send চাপুন, অথবা কপি বাটন ব্যবহার করুন।')});
+document.getElementById('cpCopyButton').addEventListener('click',async()=>{if(!competitionValid())return;const msg=competitionMessage(competitionData());try{await navigator.clipboard.writeText(msg);competitionSetStatus('আবেদন কপি হয়েছে।',true)}catch(e){const t=document.createElement('textarea');t.value=msg;document.body.append(t);t.select();const ok=document.execCommand('copy');t.remove();competitionSetStatus(ok?'আবেদন কপি হয়েছে।':'কপি করা যায়নি।',ok)}});
 
 const proofDialog=document.getElementById('proofDialog');
 const proofDialogImage=document.getElementById('proofDialogImage');
