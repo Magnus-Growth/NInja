@@ -37,6 +37,37 @@ jobs:
             test -s "$f" || { echo "Missing image: $f"; exit 1; }
           done
           touch dist/.nojekyll
+      - name: Validate both forms, privacy-safe proof gallery and inline JavaScript
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import re
+          html = Path("dist/index.html").read_text(encoding="utf-8")
+          class CheckForms(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.forms = []
+                  self.ids = set()
+              def handle_starttag(self,tag,attrs):
+                  a = dict(attrs)
+                  if a.get('id'): self.ids.add(a['id'])
+                  if tag == 'form': self.forms.append(a.get('id'))
+          p=CheckForms()
+          p.feed(html)
+          assert p.forms == ['applicationForm','competitionForm'],p.forms
+          for ident in ('competition-form','join-competition','competeJoinLink','cpFullName','cpPhone','cpTelegram','cpAccountStatus','cpShare','cpConsent','cpSendButton','cpCopyButton','cpFormStatus','pathJob','pathCompete'):
+              assert ident in p.ids,ident
+          for block in ('class="compete-notice"','class="rules"','class="proof-disclaimer"','class="tiny-note"'):
+              assert block not in html,block
+          assert html.count('class="proof-card"') == 8
+          assert 'https://t.me/lotmanager' in html
+          script = re.search(r'<script>([\\s\\S]*?)</script>',html)
+          assert script, 'Missing inline JavaScript'
+          Path('/tmp/ninja-inline.js').write_text(script.group(1),encoding='utf-8')
+          print('HTML form and gallery checks passed')
+          PY
+          node --check /tmp/ninja-inline.js
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
