@@ -78,7 +78,7 @@ jobs:
           assert 'analytics_storage: \'denied\'' in html
           assert "window.gtag('consent', 'update'" in analytics
           assert 'googletagmanager.com/gtag/js?id=' not in html
-          scripts = re.findall(r'<script(?:\\s+[^>]*)?>(.*?)</script>',html,re.S)
+          scripts = re.findall(r'<script[^>]*>(.*?)</script>',html,re.S)
           scripts = [s for s in scripts if s.strip()]
           assert len(scripts) == 2, ('Expected bootstrap and app inline JS',len(scripts))
           for i,script in enumerate(scripts):
