@@ -3,16 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- Google tag consent-mode bootstrap: no Google network request until consent -->
-<script id="google-tag-consent-default">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){window.dataLayer.push(arguments);}
-  gtag('consent', 'default', {
-    ad_storage: 'denied',
-    analytics_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied'
-  });
+<!-- Google Analytics 4: load immediately with the page -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-00J1364DR1"></script>
+<script id="ninja-gtag-init">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-00J1364DR1', {
+  allow_google_signals: false,
+  allow_ad_personalization_signals: false
+});
+</script>
+<!-- Microsoft Clarity -->
+<script id="ninja-clarity-init">
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;
+  t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,"clarity","script","z6gz4nvssg");
 </script>
 <meta name="description" content="স্বাধীন ট্রেডিং টিমে কম্পিটিশন-ডে জব অথবা নিজের NinjaTrader Arena অ্যাকাউন্টে অংশগ্রহণের সুযোগ। পুরস্কার পেলে প্রস্তাবিত ৫০% অংশগ্রহণকারী ও ৫০% টিম কমিশন, শুধুমাত্র প্রযোজ্য নিয়ম ও লিখিত চুক্তি সাপেক্ষে।" />
 <title>Trading Competition: Operator Job & Own Account Participation | Independent Team</title>
@@ -117,16 +126,6 @@ body{padding-bottom:calc(79px + env(safe-area-inset-bottom))}
 .competition-form-help{margin:12px 0 0;color:#a9bccb;font-size:12px}
 @media(max-width:660px){.competition-form-shell{padding:20px 16px}.competition-form-shell .fields{grid-template-columns:1fr}.competition-form-shell .field{grid-column:1/-1}.competition-form-heading{text-align:left}.competition-agreements{padding:10px 12px}}
 
-/* Unobtrusive visitor analytics preferences; not a warning banner */
-#trackingConsent[hidden]{display:none!important}
-#trackingConsent{position:fixed;z-index:120;bottom:calc(91px + env(safe-area-inset-bottom));right:17px;width:min(375px,calc(100vw - 26px));background:#13202c;color:#e9f0f6;border:1px solid #435269;border-radius:14px;box-shadow:0 16px 45px rgba(0,0,0,.45);padding:18px 19px}
-#trackingConsent h3{font-size:16px;font-weight:800;margin:0 0 7px}
-#trackingConsent p{font-size:12px;color:#b7c8d6;line-height:1.65;margin:0 0 13px}
-.tracking-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.tracking-actions button{border-radius:8px;border:1px solid #57687a;background:#253646;color:#e9f0f5;font-weight:700;font-size:12px;min-height:38px;padding:8px}
-#trackingAccept{border:1px solid #f28a54;background:#ff8248;color:#12161b}
-#trackingSettings{color:#b7c6d5;text-decoration:underline;border:0;background:transparent;font:inherit;cursor:pointer;padding:3px 0}
-@media(max-width:600px){#trackingConsent{right:10px;bottom:calc(87px + env(safe-area-inset-bottom));padding:15px;width:min(350px,calc(100vw - 20px))}}
 </style>
 </head>
 <body>
@@ -270,7 +269,7 @@ body{padding-bottom:calc(79px + env(safe-area-inset-bottom))}
 
 <section class="section faq" id="faq"><div class="wrap"><div style="text-align:center"><span class="eyebrow">COMMON QUESTIONS</span><h2 class="section-title">কিছু সাধারণ প্রশ্ন</h2></div><div class="faq-list"><details><summary>প্রতিদিন কাজ করতে হবে?</summary><p>না। এই সুযোগটি শুধুমাত্র আগে থেকে নির্ধারিত প্রতিযোগিতার দিনের জন্য। যেদিন প্রতিযোগিতা থাকবে না, সেদিন নির্ধারিত শিফটও থাকবে না।</p></details><details><summary>ট্রেডিংয়ের এক্সপার্ট হওয়া কি লাগবে?</summary><p>না। Buy/Sell, লট বা কন্ট্র্যাক্ট সাইজ এবং অর্ডারের বেসিক ধারণা, নির্দেশনা বুঝে দ্রুত কাজ করার দক্ষতা ও নির্ভুলতা থাকাই প্রাথমিকভাবে গুরুত্বপূর্ণ।</p></details><details><summary>নিজের টাকা বিনিয়োগ করতে হবে?</summary><p>না। আবেদন ফি, রেজিস্ট্রেশন ফি বা নিজের অর্থ দিয়ে ট্রেড করার কোনো শর্ত নেই। কেউ এই নামে অর্থ চাইলে দেবেন না।</p></details><details><summary>কম্পিটিশনে না জিতলে কি কোনো পারিশ্রমিক আছে?</summary><p>এটি পুরস্কারভিত্তিক ইনসেনটিভের প্রস্তাব। পুরস্কার না এলে নির্ধারিত স্ল্যাবের অর্থ প্রযোজ্য হবে না। নির্বাচনের আগে বিস্তারিত লিখিত পেমেন্ট নীতি ও প্রযোজ্য শ্রম-আইনের শর্ত স্পষ্ট করতে হবে।</p></details><details><summary>একাধিক অ্যাকাউন্ট ব্যবহার করা যাবে?</summary><p>কেবল সেই অ্যাকাউন্ট ও কাজের ক্ষেত্রেই, যেখানে প্ল্যাটফর্ম এবং প্রতিযোগিতার নিয়ম অনুযায়ী স্পষ্ট অনুমোদন আছে। NinjaTrader Arena-তে একই প্রতিযোগীর একাধিক এন্ট্রি নিষিদ্ধ; বিধি ভঙ্গ করে অ্যাকাউন্ট পরিচালনা করা যাবে না।</p></details></div></div></section>
 </main>
-<footer class="footer"><div class="wrap footer-inner"><div><strong>REMOTE TRADING OPERATIONS</strong><p>Independent recruitment opportunity referencing NinjaTrader® Arena. Not an official NinjaTrader job, event, advertisement, partnership, sponsorship or endorsement. Trademark belongs to its owner.</p><p><a href="https://support.ninjatrader.com/s/article/NinjaTrader-Arena-Step-by-Step-Guide?language=en_US" target="_blank" rel="noopener">Official competition rules & eligibility ↗</a> · <a href="https://t.me/lotmanager" target="_blank" rel="noopener noreferrer">Contact @lotmanager ↗</a></p></div><div style="white-space:nowrap">© 2026 Independent recruitment page</div></div><div class="wrap" style="padding-bottom:13px"><button id="trackingSettings" type="button">Analytics ও Privacy Settings</button></div></footer>
+<footer class="footer"><div class="wrap footer-inner"><div><strong>REMOTE TRADING OPERATIONS</strong><p>Independent recruitment opportunity referencing NinjaTrader® Arena. Not an official NinjaTrader job, event, advertisement, partnership, sponsorship or endorsement. Trademark belongs to its owner.</p><p><a href="https://support.ninjatrader.com/s/article/NinjaTrader-Arena-Step-by-Step-Guide?language=en_US" target="_blank" rel="noopener">Official competition rules & eligibility ↗</a> · <a href="https://t.me/lotmanager" target="_blank" rel="noopener noreferrer">Contact @lotmanager ↗</a></p></div><div style="white-space:nowrap">© 2026 Independent recruitment page</div></div><div class="wrap" style="padding-bottom:13px"><p style="font-size:11px;color:#879aa9;margin:0">Visitor Analytics: এই সাইটে Google Analytics ও Microsoft Clarity দিয়ে ভিজিট, স্ক্রল ও ক্লিক পরিমাপ করা হয়। আবেদন ফর্মের ব্যক্তিগত তথ্য অ্যানালিটিক্স ইভেন্টে পাঠানো হয় না।</p></div></footer>
 
 <div class="path-bottom" role="navigation" aria-label="দুইভাবে অংশগ্রহণ করুন">
   <div class="path-bottom-inner">
@@ -280,11 +279,6 @@ body{padding-bottom:calc(79px + env(safe-area-inset-bottom))}
 </div>
 
 
-<div id="trackingConsent" role="dialog" aria-labelledby="trackingTitle" aria-hidden="true" tabindex="-1" hidden>
-  <h3 id="trackingTitle">Analytics অনুমতি</h3>
-  <p>আপনার অনুমতি থাকলে Google Analytics ও Microsoft Clarity দিয়ে ওয়েবসাইটের ভিজিট, ক্লিক এবং স্ক্রল মাপব। ফর্মে লেখা নাম, ফোন বা ব্যক্তিগত তথ্য Analytics-এ পাঠাব না। চাইলে নিচে প্রত্যাখ্যান করতে পারেন; পরে Footer থেকে পছন্দ বদলাতে পারবেন।</p>
-  <div class="tracking-actions"><button id="trackingDecline" type="button">এখন নয়</button><button id="trackingAccept" type="button">Analytics চালু করুন</button></div>
-</div>
 <script src="assets/analytics.js"></script>
 <script>
 (()=>{
