@@ -30,6 +30,8 @@ jobs:
           cp -R assets dist/assets
           test "$(find dist/assets/wins -maxdepth 1 -name 'win-*.webp' | wc -l)" -eq 8
           grep -q 'id="competition-wins"' dist/index.html
+          grep -q 'id="join-competition"' dist/index.html
+          grep -q 'class="path-bottom"' dist/index.html
           for n in $(seq 1 8); do
             f="dist/assets/wins/win-$(printf '%02d' "$n").webp"
             test -s "$f" || { echo "Missing image: $f"; exit 1; }
