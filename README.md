@@ -46,17 +46,17 @@ The Actions workflow on pushes to `main` publishes only `index.html`. Other repo
 
 ## Analytics & visitor behavior (November 2026)
 
-The static Ninja landing page now has consent-gated analytics and behaviour reports.
+Google Analytics 4 and Microsoft Clarity are installed **immediately on page load**, with no analytics consent popup. This is at the site owner's request.
 
 - **GA4 Measurement ID:** `G-00J1364DR1`
 - **Microsoft Clarity Project ID:** `z6gz4nvssg`
-- **Client script:** `assets/analytics.js`, referenced by `index.html`
-- **Consent:** New visitors see a small opt-in dialog. Before opt-in, neither Google nor Clarity analytics scripts are loaded. Visitors can decline without losing any site functionality. They can change this choice using **Analytics ও Privacy Settings** in the footer. Advertising consent always remains denied.
-- **Privacy:** Both forms use `data-clarity-mask="true"`. Never emit name, phone, Telegram handles, location, applicant notes, form content, or Telegram message draft into analytics events.
-- **GA4 standard auto page views:** Count after consent. Clarity supplies heatmaps, scroll activity, and session recordings subject to consent.
-- **Custom events:** `job_form_start`, `competition_form_start`, `job_form_invalid`, `competition_form_invalid`, `job_telegram_draft_click`, `competition_telegram_draft_click`, `job_copy_click`, `competition_copy_click`, `job_nav_click`, `competition_nav_click`, `competition_form_cta_click`, `job_cta_click`, `competition_cta_click`, `proof_gallery_cta_click`, `proof_image_open`, `scroll_25`, `scroll_50`, `scroll_75`, `scroll_90`.
-- **Important:** `*_telegram_draft_click` measures an attempted open of the Telegram draft. It does *not* confirm that the candidate pressed Send in Telegram. A secure server and bot with verified delivery would be required for confirmed applications.
-- No historical clicks, scrolls or visitor totals are available from before tracking was installed.
-- Reports: [Google Analytics](https://analytics.google.com/analytics/web/) and [Clarity](https://clarity.microsoft.com/). In GA4 go to **Reports → Realtime** to verify; events normally become reportable after collection and processing. In Clarity inspect **Recordings**, **Heatmaps**, and **Events**.
-- Custom event parameters like `proof_number` and `percent_scrolled` may require registering event-scoped custom dimensions in GA4 if you want those values in standard reports.
-- Browser tracking can be limited by consent refusals, network filters, ad blockers, and privacy extensions.
+- **GA4 bootstrap:** `index.html` head.
+- **Clarity bootstrap:** `index.html` head.
+- **Custom events:** `assets/analytics.js` measures job and competition form starts, Telegram draft clicks, CTA navigation, payment proof image clicks, and scroll depth (25%, 50%, 75%, 90%).
+- Both forms use `data-clarity-mask="true"`. No application form values, name, phone, or Telegram message contents are sent as custom analytics event parameters.
+- **Telegram limitation:** a `*_telegram_draft_click` is not proof that a Telegram message was sent or received.
+- **Privacy/legal:** analytics vendors may collect visitor data (such as cookies, IP-derived information, and device/browser signals). Depending on visitors' jurisdiction, consent and privacy disclosures may be legally required before tracking. The site owner is responsible for compliance and should add appropriate controls for relevant visitors.
+- **Tag validation:** Google Tag Assistant may time out for reasons unrelated to tag installation. Confirm via browser developer tools network tab for `gtag/js?id=G-00J1364DR1` and `clarity.ms/tag/z6gz4nvssg`, then check GA4 Realtime and Clarity sessions. Ad blockers may still interfere.
+- **Dashboard URLs:** [Google Analytics](https://analytics.google.com/analytics/web/) and [Clarity](https://clarity.microsoft.com/).
+- Custom event parameters like `proof_number` and `percent_scrolled` may require registering event-scoped custom dimensions in GA4 for standard reporting.
+- Historical visits, scrolls, or clicks from before tracking was installed are not recoverable.
